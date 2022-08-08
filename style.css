@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-header: 'Staatliches', cursive;
+    --ff-texto: 'Palanquin', sans-serif;
+
+    /* variaveis de cores de background*/
+    --bg-primaria: #ffffff;
+    --bg-header: #8E9AAF;
+    --bg-linha: #CBC0D3;
+    --bg-card:#FEEAFA;
+
+    /* variaveis de cores de fonte */
+    --fc-primaria: #ffffff;
+    --fc-secundaria: #23053A;
+    --fc-card: #4A4E69;
+
+    /* variaveis de tamanho das fontes */
+    font-size: 62.5%;
+    --fs-informartivo: 20px;
+    --fs-heading: clamp(4rem, 1rem + 5vw, 5.6rem); 
+    --fs-heading-sm: clamp(3rem, 0.5rem + 3vw, 4rem); 
+}
+
+body {
+    font-family: var(--ff-texto);
+    background-color: var(--bg-primaria);
+    color: var(--fc-secundaria);
+}
+
+.pagina {
+    padding: 0 5rem;
+    margin: 0 auto;
+    max-width: clamp(33rem, 30rem + 60vw, 117rem);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    background: var(--bg-header);
+    font-family: var(--ff-header);
+    text-align: center;
+    width: 483px;
+
+    /* animação */
+    animation: topdown 700ms;
+}
+
+header img {
+    width: 320px;
+    height: 310px;
+    padding-left: 0.5rem;
+}
+
+header h1 {
+    position: relative;
+    color: var();
+    font-weight: 800;
+    font-size: var(--fs-heading);
+    color: var(--fc-primaria);
+    line-height: 4.8rem;
+    letter-spacing: 0.2em;
+    padding-bottom: 3.6rem;
+    padding-left: 2rem;
+}
+
+#linha {
+    width: 483px;
+    top: 309px;
+    border: 28px solid #CBC0D3;
+    position: absolute;
+}
+
+main {
+    display: grid;
+    gap: 3.2rem;
+    padding-bottom: 10rem;
+    animation: downtop 700ms 350ms backwards;
+}
+
+.informativo {
+    font-family: var(--ff-texto);
+    font-size: var(--fs-informartivo);
+    color: var(--fc-secundaria);
+    padding: 2.5rem 2rem;
+    line-height: 3.2rem;
+    margin-bottom: 3.2;
+    text-align: center; 
+    width: 400px;
+}
+
+
+.card {
+    position: relative;
+    font-family: var(--ff-header);
+}
+
+.card img {
+    height: 41.6rem;
+    object-fit: cover;
+    /* filtro para deixar a imagem mais eascura */
+
+    border-radius: 20px;
+    /* transição */
+}
+
+/* quando o usuário passar o mouse em cima */
+.card img:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+}
+
+.card h2 {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.8rem;
+    font-size: var(--fs-heading-sm);
+    color: var(--fc-card);
+    font-weight: 800;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+}
+
+.card h2 span {
+    border-radius: 2rem;
+    background-color: var(--bg-card);
+    font-weight: 400;
+    padding: 0 2.5rem;
+    width: fit-content;
+    height: 3.8rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+@keyframes topdown {
+    0% {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes downtop {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
